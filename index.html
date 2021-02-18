@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="google-site-verification" content="ftFOlJETX-2KNjaPh8W6s8lhigItRuu9fOmjHZZ0nY0" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>Multi-stage Transfer Learning for IOT-enabledEmotional Human-Computer Interaction</title>
+</head>
+<style type="text/css">
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  audio {
+    width: 100%;
+  }
+
+  thead>tr>th:first-child {
+    width: 96px;
+  }
+
+  @media (max-width: 767px) {
+    .big-screen {
+      display: none;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .small-screen {
+      display: none;
+    }
+  }
+</style>
+
+<body>
+  <header class="header">
+    <div class="jumbotron bg-secondary text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <h1><a class="text-light">Multi-stage Transfer Learning for IOT-enabledEmotional Human-Computer Interaction</h1><br>
+             </a>  
+            <p>
+              <div class="row">
+              </div>
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row" id="result">
+        <div class="col-md-12">
+<h4>Abstract</h4>
+The recent advances in neural Text-to-Speech (TTS) have made ``human parity'' synthesized speech possible when a large amount of training corpus is available. Furthermore, emotion control can be achieved by using the emotional codes in an unified model, referred to as emotional TTS. However, owing to the limitation of annotated emotional training corpus, emotional TTS systems tend to have lower performance. To address this problem, we present a multi-stage cross-lingual transfer learning scheme, whereby we first pre-train an end-to-end TTS model using an English standard TTS corpus. The resulting  model is then initialized via the parameters of the pre-trained TTS model, and fine-tuned on the basis of an English emotional TTS corpus. Finally, a small Mandarin emotional TTS corpus is utilized to do self-adaptation. With such a learning process, the proposed Mandarin emotional TTS model can project high-quality emotional speech under the limited emotional corpus, which is able to serve for the uses of various real-time smart Internet of Things-enabled applications. Experiments have been conducted to demonstrate the effectiveness and superiority  of the proposed method as comparison to all counterparts in terms of naturalness and emotional expressiveness. We refer readers to visit our demo webpage and enjoy the synthesized speech samples.
+<br><br><br>
+                    <img src="./audio/model.png"  width="1050" height="350" / >
+                    <br>Block diagram of the proposed training scheme, multi-stage cross-lingual transfer learning. Stage-I means the Neutral Pre-training (NP) stage, which train the basic emotional TTS model using the English TTS corpus with neutral emotion. Stage-II means the Emotional Fine-Tuning (EF) stage, which fine-tuning the pre-trained emotional TTS model using the English TTS corpus with three emotions (neural, happy and sad). We transfer the parameters of text encoder, emotion encoder and acoustic decoder form Stage-I to Stage-II.
+Stage-III means the Emotional Self-Adaptation (ES) stage, which train the fine-tuned emotional TTS model using the small Mandarin TTS corpus with three emotions (neural, happy and sad). We transfer the parameters of emotion encoder and acoustic decoder form Stage-II to Stage-III. e^ES represents the trained emotion vector in Stage-III.
+                    
+                   
+                  <div class="big-screen">
+                    <br /><br />
+                    <h5> <b>A</b>: one-stage training scheme</h5>
+                    <h5><b>B</b>: two-stage transfer learning scheme</h5>
+                    <h5><b>C</b>: two-stage cross-lingual transfer learning scheme</h5>
+                     <h5><b>D</b>: proposed three-stage cross-lingual transfer learning scheme</h5>
+                    <br />
+                    <br />
+                     
+                    <!--  Naturalness Evaluation -->
+                    <table class="table">
+                      <thead>
+                        <!-- Mandarin -->
+                        <tr>
+                             <th colspan=5><h4>Speech samples: </h4></th>
+                        </tr>
+                        
+                      </thead>
+                      <tbody>
+                                
+                                
+                                <tr>
+                                    <th></th>
+                                    <th style="text-align:center;">   A</th>
+                                    <th style="text-align:center;">   B</th>
+                                    <th style="text-align:center;">   C </th>
+                                    <th style="text-align:center;">   D </th>
+                          
+                                </tr>
+                                <!-- single sentence -->
+                                <tr>
+                                  <th colspan=5 align="center">[1]</th>
+                                </tr>
+                                <tr>
+                                  <th scope="row" style="text-align:right;">neutral</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/neutral/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/neutral/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/neutral/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/neutral/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr>
+                                  <th scope="row" style="text-align:right;">happy</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/happy/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/happy/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/happy/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/happy/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr> 
+                                  <th scope="row" style="text-align:right;">sad</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/sad/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/sad/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/sad/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/sad/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+
+                                <tr>
+                                  <th colspan=5 align="center">[2]</th>
+                                </tr>
+                                <tr>
+                                  <th scope="row" style="text-align:right;">neutral</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/neutral/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/neutral/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/neutral/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/neutral/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr>
+                                  <th scope="row" style="text-align:right;">happy</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/happy/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/happy/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/happy/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/happy/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr> 
+                                  <th scope="row" style="text-align:right;">sad</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/sad/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/sad/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/sad/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/sad/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+
+
+                                <tr>
+                                  <th colspan=5 align="center">[3]</th>
+                                </tr>
+                                <tr>
+                                  <th scope="row" style="text-align:right;">neutral</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/neutral/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/neutral/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/neutral/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/neutral/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr>
+                                  <th scope="row" style="text-align:right;">happy</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/happy/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/happy/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/happy/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/happy/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr> 
+                                  <th scope="row" style="text-align:right;">sad</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/sad/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/sad/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/sad/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/sad/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+
+                                <tr>
+                                  <th colspan=5 align="center">[4]</th>
+                                </tr>
+                                <tr>
+                                  <th scope="row" style="text-align:right;">neutral</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/neutral/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/neutral/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/neutral/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/neutral/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr>
+                                  <th scope="row" style="text-align:right;">happy</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/happy/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/happy/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/happy/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/happy/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr> 
+                                  <th scope="row" style="text-align:right;">sad</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/sad/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/sad/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/sad/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/sad/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+
+                                <tr>
+                                  <th colspan=5 align="center">[5]</th>
+                                </tr>
+                                <tr>
+                                  <th scope="row" style="text-align:right;">neutral</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/neutral/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/neutral/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/neutral/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/neutral/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr>
+                                  <th scope="row" style="text-align:right;">happy</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/happy/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/happy/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/happy/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/happy/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                  <tr> 
+                                  <th scope="row" style="text-align:right;">sad</th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/A/sad/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/B/sad/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/C/sad/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./audio/D/sad/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+
+
+
+
+                      </tbody>
+                    </table>
+
+
+
+
+
+
+
+                  </div>
+                 
+        </div>
+      </div>
+      <hr>
+      <div class="row" id="ref">
+        <div class="col">
+          <!--<h2>References</h2>
+          
+         -->
+        </div>
+      </div>
+      <hr>
+      <!-- <div class="row" id="contact">
+          <div class="col">
+            <h2>Contact</h2>
+            <div></div>
+          </div>
+        </div> -->
+    </div>
+  </main>
+  <footer class="bg-secondary text-light mt-4 pt-3 pb-2 ">
+    <div class="container">
+      <p class="text-center">
+        
+      </p>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
