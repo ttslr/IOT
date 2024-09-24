@@ -1,9 +1,10 @@
 # ttsdemo
 
 [Multi-Stage Deep Transfer Learning for EmIoT-enabled Human-Computer Interaction](https://ieeexplore.ieee.org/document/9702532)
+
 Authors: Rui Liu; Qi Liu; Hongxu Zhu; Hui Cao
 
-This paper was accepted by **IEEE Internet of Things Journal, 2022**
+This paper was accepted by **IEEE Internet of Things Journal (IEEE-IoTJ), 2022**
 
 
 ## Speech samples
